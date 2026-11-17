@@ -20,12 +20,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
+
+      - name: Validate static site entry point
+        run: |
+          test -f index.html
+          test -f assets/css/style.css
+          test -f assets/js/data.js
+          test -f assets/js/main.js
+
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
+
   deploy:
     environment:
       name: github-pages
