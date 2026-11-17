@@ -1,0 +1,20 @@
+# Local editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# PHP local secrets and runtime files
+.env
+.env.*
+!.env.example
+/backend/config/database.local.php
+/uploads/*
+!/uploads/.gitkeep
+
+# Dependencies and generated output
+vendor/
+node_modules/
+dist/
+build/
+*.log
